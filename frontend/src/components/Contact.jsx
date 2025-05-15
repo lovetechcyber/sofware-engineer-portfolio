@@ -18,7 +18,7 @@ const Contact = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/contact", formData);
+      await axios.post("https://sofware-engineer-portfolio.onrender.com/api/contact", formData);
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
