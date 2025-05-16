@@ -20,10 +20,10 @@ const Contact = () => {
   try {
     await axios.post("https://sofware-engineer-portfolio.onrender.com/api/contact", formData);
     alert("Message sent successfully!");
-    window.location.reload(); // Refreshes the page
+    setFormData({ name: "", email: "", message: "" }); // Clear inputs
   } catch (error) {
     alert("Failed to send message.");
-    window.location.reload(); // Refreshes the page
+   
   }
 };
 
