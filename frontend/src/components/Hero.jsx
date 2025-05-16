@@ -35,7 +35,7 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <Link
-          to="/projects"
+          to="#projects"
           className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
         >
           View My Work
