@@ -1,35 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Set dark mode class on first load
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    }
-  }, []);
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    if (isDark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-    setIsDark(!isDark);
-  };
-
-  // Links to different pages
   const links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
@@ -41,66 +18,15 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
+    <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo or brand */}
-        <Link to="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
+        {/* Logo */}
+        <Link to="/" className="text-xl font-bold text-blue-600">
           Prince Okwubali
         </Link>
 
-        {/* Desktop nav links */}
+        {/* Desktop nav */}
         <nav className="hidden md:flex space-x-6">
-          {links.map((link) => (
-            <motion.div
-              key={link.name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Link
-                to={link.path}
-                className={`text-sm font-medium transition duration-200 ${
-                  location.pathname === link.path
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-800 dark:text-gray-200 hover:text-blue-500"
-                }`}
-              >
-                {link.name}
-              </Link>
-            </motion.div>
-          ))}
-        </nav>
-
-        {/* Right icons: dark mode + mobile menu toggle */}
-        <div className="flex items-center space-x-4">
-          {/* Dark mode toggle */}
-          <button
-            onClick={toggleDarkMode}
-            aria-label="Toggle Dark Mode"
-            className="text-xl text-gray-800 dark:text-gray-200 focus:outline-none"
-          >
-            {isDark ? <FaSun /> : <FaMoon />}
-          </button>
-
-          {/* Mobile menu icon */}
-          <button
-            className="md:hidden text-xl text-gray-800 dark:text-gray-200"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile nav dropdown with animation */}
-      {isMobileMenuOpen && (
-        <motion.nav
-          className="md:hidden px-6 pb-4 bg-white dark:bg-gray-900"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
           {links.map((link) => (
             <motion.div
               key={link.name}
@@ -110,19 +36,56 @@ const Navbar = () => {
             >
               <Link
                 to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block py-2 text-sm font-medium ${
+                className={`text-sm font-medium transition duration-200 ${
                   location.pathname === link.path
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-800 dark:text-gray-200 hover:text-blue-500"
+                    ? "text-blue-600 border-b-2 border-blue-600"
+                    : "text-gray-800 hover:text-blue-500"
                 }`}
               >
                 {link.name}
               </Link>
             </motion.div>
           ))}
-        </motion.nav>
-      )}
+        </nav>
+
+        {/* Mobile menu toggle */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-2xl text-gray-800 focus:outline-none"
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.nav
+            className="md:hidden px-6 pb-4 bg-white shadow-inner"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block py-2 text-sm font-medium ${
+                  location.pathname === link.path
+                    ? "text-blue-600 font-semibold"
+                    : "text-gray-800 hover:text-blue-500"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -28,15 +29,18 @@ const Hero = () => {
       </motion.p>
 
       {/* Animated CTA Button */}
-      <motion.a
-        href="#projects"
-        className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+      <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        View My Work
-      </motion.a>
+        <Link
+          to="/projects"
+          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
+        >
+          View My Work
+        </Link>
+      </motion.div>
     </section>
   );
 };
