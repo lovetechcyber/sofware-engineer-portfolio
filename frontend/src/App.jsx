@@ -29,5 +29,3 @@ return (
 );
 }
 export default App;
-Remove route and make it a one page site with fixed and scroll animation
-
