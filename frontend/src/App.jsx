@@ -12,6 +12,8 @@ function App() {
   return (
     <div className="font-sans text-gray-800 dark:text-white dark:bg-gray-900 scroll-smooth">
       <Navbar />
+
+<div className="bg-blue-500 text-white p-10">Test Tailwind Background</div>
       
       <section id="home">
         <Hero />
