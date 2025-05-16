@@ -12,7 +12,7 @@ const Contact = () => {
   const [status, setStatus] = useState("");
 
   const handleChange = e => {
-    setFormData({ ...formData, [e.target.name, e target.email, e.target.message]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async e => {
