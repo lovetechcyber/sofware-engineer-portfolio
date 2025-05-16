@@ -16,15 +16,16 @@ const Contact = () => {
   };
 
   const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      await axios.post("https://sofware-engineer-portfolio.onrender.com/api/contact", formData);
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      setStatus("Failed to send message.");
-    }
-  };
+  e.preventDefault();
+  try {
+    await axios.post("https://sofware-engineer-portfolio.onrender.com/api/contact", formData);
+    alert("Message sent successfully!");
+    window.location.reload(); // Refreshes the page
+  } catch (error) {
+    alert("Failed to send message.");
+    window.location.reload(); // Refreshes the page
+  }
+};
 
   return (
     <section
