@@ -5,4 +5,5 @@ export const content = [
 export const theme = {
   extend: {},
 };
+<div className="scroll-smooth">
 export const plugins = [];
