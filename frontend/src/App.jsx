@@ -12,7 +12,6 @@ import PortfolioChoice from "./components/PortfolioChoice";
 import Portfolio from "./components/Cybersecurity";
 
 function App() {
-<<<<<<< HEAD
   return (
     <Router>
     <div className="font-sans text-gray-800 dark:text-white dark:bg-gray-900">
@@ -32,24 +31,5 @@ function App() {
     </div>
   </Router>
   );
-=======
-return (
-<Router>
-<div className="font-sans text-gray-800 dark:text-white dark:bg-gray-900">
-<Navbar />
-<Routes>
-<Route path="/" element={<Hero />} />
-<Route path="/about" element={<About />} />
-<Route path="/skills" element={<Skills />} />
-<Route path="/projects" element={<Projects />} />
-<Route path="/experience" element={<Experience />} />
-<Route path="/certifications" element={<Certifications />} />
-<Route path="/contact" element={<Contact />} />
-</Routes>
-<Footer />
-</div>
-</Router>
-);
->>>>>>> d10d3a35b3b4eaab0cb0d7cb602fbcb1a95f7325
 }
 export default App;
