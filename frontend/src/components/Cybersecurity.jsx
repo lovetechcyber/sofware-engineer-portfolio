@@ -25,11 +25,7 @@ const Portfolio = () => {
         viewport={{ once: true }}
         className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8"
       >
-                  <img
-            src={profileImg}
-            alt="Prince Okwubali"
-            className="w-72 h-72 object-cover rounded-full border-4 border-blue-500 shadow-lg"
-          />
+                 
         <div>
           <h2 className="text-2xl font-semibold mb-2">About Me</h2>
           <p className="text-gray-300">
