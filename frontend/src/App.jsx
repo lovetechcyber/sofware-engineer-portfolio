@@ -8,6 +8,8 @@ import Certifications from "./components/Certification";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import PortfolioChoice from "./components/PortfolioChoice";
+import Portfolio from "./components/Cybersecurity";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
     <div className="font-sans text-gray-800 dark:text-white dark:bg-gray-900">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<PortfolioChoice />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/hero" element={<Hero />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
