@@ -26,8 +26,8 @@ const Portfolio = () => {
         className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8"
       >
         <img
-          src="https://avatars.githubusercontent.com/u/122104317?v="
-          alt="Profile"
+          src={profileImg}
+          alt="Prince Okwubali"
           className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-blue-500 shadow-lg"
         />
         <div>
