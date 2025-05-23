@@ -3,32 +3,41 @@ import { motion } from "framer-motion";
 
 const Portfolio = () => {
   return (
-    <main className="bg-gray-900 text-white font-sans min-h-screen p-4 md:p-8">
+    <main className="bg-gray-900 text-white font-sans min-h-screen px-4 md:px-8 py-10 space-y-20">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center py-10"
+        className="text-center space-y-4"
       >
-        <h1 className="text-3xl md:text-5xl font-bold mb-4">Cybersecurity Professional</h1>
-        <p className="text-lg md:text-xl">Specializing in Offensive Security, penetration testing, vulnerability testing & Incident Response</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold">Cybersecurity Professional</h1>
+        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          Specializing in Offensive Security, penetration testing, vulnerability testing & Incident Response.
+        </p>
       </motion.section>
 
-      {/* About Me */}
+      {/* About Me with Image */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto mb-10"
+        className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8"
       >
-        <h2 className="text-2xl font-semibold mb-2">About Me</h2>
-        <p>
-          I am a cybersecurity professional with hands-on experience in ethical hacking,
-          network defense, and threat detection. My passion lies in building security tools and
-          defending systems through automation and intelligence.
-        </p>
+        <img
+          src="https://avatars.githubusercontent.com/u/122104317?v="
+          alt="Profile"
+          className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-blue-500 shadow-lg"
+        />
+        <div>
+          <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+          <p className="text-gray-300">
+            I am a cybersecurity professional with hands-on experience in ethical hacking,
+            network defense, and threat detection. My passion lies in building security tools and
+            defending systems through automation and intelligence.
+          </p>
+        </div>
       </motion.section>
 
       {/* Projects */}
@@ -37,9 +46,9 @@ const Portfolio = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="mb-10"
+        className="max-w-6xl mx-auto"
       >
-        <h2 className="text-2xl font-semibold mb-4 text-center">Projects</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">Projects</h2>
         <div className="grid gap-6 md:grid-cols-2">
           {[
             {
@@ -69,16 +78,16 @@ const Portfolio = () => {
           ].map((project, i) => (
             <motion.div
               key={i}
-              className="bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition"
+              className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition border border-gray-700"
               whileHover={{ scale: 1.03 }}
             >
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-sm mb-4">{project.description}</p>
+              <p className="text-sm text-gray-300 mb-4">{project.description}</p>
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:underline"
+                className="text-blue-400 hover:underline text-sm"
               >
                 View on GitHub
               </a>
@@ -93,10 +102,10 @@ const Portfolio = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="mb-10"
+        className="max-w-4xl mx-auto"
       >
         <h2 className="text-2xl font-semibold mb-4 text-center">Skills</h2>
-        <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm md:text-base text-center">
+        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm md:text-base text-center">
           {[
             "Network Security",
             "Penetration Testing",
@@ -113,7 +122,7 @@ const Portfolio = () => {
           ].map((skill, i) => (
             <li
               key={i}
-              className="bg-gray-700 py-2 rounded-md hover:bg-gray-600 transition"
+              className="bg-gray-700 py-2 px-4 rounded-md hover:bg-gray-600 transition"
             >
               {skill}
             </li>
