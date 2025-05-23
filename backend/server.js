@@ -20,11 +20,12 @@ app.post("/api/contact", async (req, res) => {
     },
   });
 
+  // Compose mail options
   const mailOptions = {
-    from: email,
+    from: process.env.EMAIL_USER, // Use your own email here to avoid Gmail blocking it
     to: process.env.EMAIL_USER,
     subject: `Message from ${name}`,
-    text: message,
+    text: `From: ${email}\n\nMessage:\n${message}`,
   };
 
   try {
