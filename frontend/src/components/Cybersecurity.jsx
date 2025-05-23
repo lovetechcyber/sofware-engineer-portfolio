@@ -11,8 +11,8 @@ const Portfolio = () => {
         transition={{ duration: 0.6 }}
         className="text-center py-10"
       >
-        <h1 className="text-3xl md:text-5xl font-bold mb-4">Cybersecurity Portfolio</h1>
-        <p className="text-lg md:text-xl">Specializing in Offensive Security & Incident Response</p>
+        <h1 className="text-3xl md:text-5xl font-bold mb-4">Cybersecurity Professional</h1>
+        <p className="text-lg md:text-xl">Specializing in Offensive Security, penetration testing, vulnerability testing & Incident Response</p>
       </motion.section>
 
       {/* About Me */}
@@ -134,7 +134,7 @@ const Portfolio = () => {
           Email: <a href="mailto:lovetechcyb@gmail.com" className="text-blue-400">lovetechcyb@gmail.com</a>
         </p>
         <p className="text-sm md:text-base">
-          LinkedIn: <a href="https://www.linkedin.com/in/prince-okwubali" className="text-blue-400" target="_blank" rel="noopener noreferrer">yourusername</a>
+          LinkedIn: <a href="https://www.linkedin.com/in/prince-okwubali" className="text-blue-400" target="_blank" rel="noopener noreferrer">Prince Okwubali</a>
         </p>
       </motion.section>
     </main>
