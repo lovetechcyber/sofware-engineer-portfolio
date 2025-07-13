@@ -27,9 +27,10 @@ function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/contact" element={<Contact />} />
+<Route path="/homepage" element={<Tikwave />} />
       </Routes>
 <Route path="/portfolio" element={<Cybersycurity />} />
-<Route path="/homepage" element={<Tikwave />} />
+
       </Routes>
       <Footer />
     </div>
