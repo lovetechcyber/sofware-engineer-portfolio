@@ -29,7 +29,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 <Route path="/portfolio" element={<Cybersycurity />} />
-<Route path="/portfolio" element={<Cybersycurity />} />
+<Route path="/homepage" element={<Tikwave />} />
       </Routes>
       <Footer />
     </div>
