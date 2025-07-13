@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import PortfolioChoice from "./components/PortfolioChoice";
 import Portfolio from "./components/Cybersecurity";
+import Homepage from "./components/Tikwave";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+<Route path="/portfolio" element={<Cybersycurity />} />
 <Route path="/portfolio" element={<Cybersycurity />} />
       </Routes>
       <Footer />
