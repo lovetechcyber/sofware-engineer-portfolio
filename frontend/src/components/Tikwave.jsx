@@ -6,7 +6,7 @@ const Homepage = () => {
       {/* Hero Section */}
       <section
         className="bg-cover bg-center text-white py-20 px-4"
-        style={{ backgroundImage: "url('/doing.jpg')" }}
+        style={{ backgroundImage: "url('/doing.png')" }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -29,10 +29,10 @@ const Homepage = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-4">
           {[
-            { img: '/doing.jpg', title: 'Traditional Celebration', subtitle: 'Unity in Culture' },
-            { img: '/culture.jpg', title: 'Future Leaders', subtitle: 'Driven by Excellence' },
-            { img: '/pride.jpg', title: 'Cultural Pride', subtitle: 'Vibrant Traditions' },
-            { img: '/culture.jpg', title: 'Community Spirit', subtitle: 'Together We Rise' },
+            { img: '/doing.png', title: 'Traditional Celebration', subtitle: 'Unity in Culture' },
+            { img: '/culture.png', title: 'Future Leaders', subtitle: 'Driven by Excellence' },
+            { img: '/pride.png', title: 'Cultural Pride', subtitle: 'Vibrant Traditions' },
+            { img: '/culture.png', title: 'Community Spirit', subtitle: 'Together We Rise' },
           ].map(({ img, title, subtitle }, i) => (
             <div key={i} className="bg-white shadow rounded overflow-hidden">
               <img src={img} alt={title} className="w-full h-48 object-cover" />
